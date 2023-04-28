@@ -8,7 +8,7 @@ def translate():
         json_data = json.load(json_file)
         client_id = json_data["ClientID"]
         client_secret = json_data["ClientSecret"]
-    f = open("test.txt", 'rt', encoding='UTF-8', errors='ignore')
+    f = open("source.txt", 'rt', encoding='UTF-8', errors='ignore')
     origin = f.read()
     origin_text = urllib.parse.quote(origin)
     data = "source=ja&target=ko&text=" + origin_text
