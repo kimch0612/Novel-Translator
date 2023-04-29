@@ -25,6 +25,9 @@ def translate():
         out = json.loads(result)
         with open("output.txt", "a", encoding="utf-8") as f:
             f.write(out['message']['result']['translatedText'] + "\n\n\n\n")
+    elif(rescode == 429):
+        print("Papago API의 하루 최대치에 도달했습니다.\n내일 다시 시도해주세요.")
+        driver.quit()
     else:
         print("Error Code: " + rescode)
     
@@ -68,7 +71,8 @@ with open('account.json', 'rt', encoding='UTF8') as json_file:
     client_id = json_data["ClientID"]
     client_secret = json_data["ClientSecret"]
 
-init_chrome()
-init_crawling()
-crawler()
-driver.close()
+# init_chrome()
+# init_crawling()
+# crawler()
+# driver.close()
+translate()
