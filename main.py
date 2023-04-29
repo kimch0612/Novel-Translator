@@ -7,11 +7,7 @@ import urllib.request
 import time
 
 def translate():
-    with open('account.json', 'rt', encoding='UTF8') as json_file:
-        json_data = json.load(json_file)
-        client_id = json_data["ClientID"]
-        client_secret = json_data["ClientSecret"]
-    f = open("source.txt", 'rt', encoding='UTF-8', errors='ignore')
+    f = open("temp.txt", 'rt', encoding='UTF-8', errors='ignore')
     origin = f.read()
     origin_text = urllib.parse.quote(origin)
     data = "source=ja&target=ko&text=" + origin_text
@@ -31,6 +27,8 @@ def translate():
             f.write(out['message']['result']['translatedText'] + "\n\n\n\n")
     else:
         print("Error Code: " + rescode)
+    
+    os.remove('temp.txt')
 
 def init_chrome():
     global driver
@@ -57,9 +55,20 @@ def crawler():
             try:
                 epititle = driver.find_element_by_css_selector("#contentMain-header > p").text
                 epibody = driver.find_element_by_css_selector("#contentMain-inner > div > div > div").text
-                with open("source.txt", "a", encoding="utf-8") as f:
+                with open("temp.txt", "a", encoding="utf-8") as f:
                     f.write(epititle + "\n\n" + epibody + "\n\n\n\n")
+                translate()
                 driver.find_element_by_xpath('//*[@id="contentMain-readNextEpisode"]/span').click()
-                time.sleep(3.5)
+                time.sleep(10)
             except:
                 break
+
+with open('account.json', 'rt', encoding='UTF8') as json_file:
+    json_data = json.load(json_file)
+    client_id = json_data["ClientID"]
+    client_secret = json_data["ClientSecret"]
+
+init_chrome()
+init_crawling()
+crawler()
+driver.close()
