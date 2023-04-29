@@ -71,8 +71,7 @@ with open('account.json', 'rt', encoding='UTF8') as json_file:
     client_id = json_data["ClientID"]
     client_secret = json_data["ClientSecret"]
 
-# init_chrome()
-# init_crawling()
-# crawler()
-# driver.close()
-translate()
+init_chrome()
+init_crawling()
+crawler()
+driver.close()

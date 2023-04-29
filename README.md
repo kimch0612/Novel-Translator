@@ -12,6 +12,9 @@
 ##### ClientID와 ClientSecret는 Papago API를 이용하기 때문에 Naver Developers Open API 사이트에서 발급받으면 됩니다.
 ##### 이후 novel.py를 실행하면 됩니다.
 
+## 대응 사이트
+##### 카쿠요무 (kakuyomu.jp)
+
 ## 앞으로 추가할 기능
 ##### 캐릭터 이름을 미리 한글로 치환해두는 기능 추가
 ##### 소설가가 되자 사이트 등에서 자동으로 source 파일을 Crawling 해오는 기능 추가
