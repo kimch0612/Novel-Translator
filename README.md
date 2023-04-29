@@ -10,7 +10,7 @@
 ## 사용 방법
 ##### 실행하기 전, account.json 파일을 생성한 뒤 json 문법에 맞게 ClientID와 ClientSecret의 값을 입력해줍니다.
 ##### ClientID와 ClientSecret는 Papago API를 이용하기 때문에 Naver Developers Open API 사이트에서 발급받으면 됩니다.
-##### 이후 novel.py를 실행하면 됩니다.
+##### 이후 main.py를 실행하면 됩니다.
 
 ## 대응 사이트
 ##### 카쿠요무 (kakuyomu.jp)
