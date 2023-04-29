@@ -2,7 +2,9 @@
 
 ## 동작이 확인된 환경
 ##### Code-Server v4.11.0 (amd64 system)
+##### Windows 11 22621.1555
 ##### Python 3.8.10
+##### Selenium 3.10.0
 
 ## 동작 구조
 ##### source.txt 파일에서 원문 파일을 불러와 Papago API를 이용해 번역 데이터를 뽑아오고, 그 데이터를 output.txt 파일에 저장합니다.
